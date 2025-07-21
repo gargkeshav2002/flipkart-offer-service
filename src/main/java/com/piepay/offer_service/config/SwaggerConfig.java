@@ -16,7 +16,7 @@ public class SwaggerConfig {
                         .version("1.0.0")
                         .description(
                                 "Backend APIs for saving and querying Flipkart-style offers.<br/><br/>" +
-                                        "📘 <b>Assignment Instructions:</b> <a href=\"https://example.com/assignment-doc\">Click here</a><br/>" +
+                                        "📘 <b>Code:</b> <a href=\"https://github.com/gargkeshav2002/flipkart-offer-service\">Click here</a><br/>" +
                                         "🗃️ <b>Access H2 Console:</b> <a href='http://localhost:8080/h2-console' target='_blank'>Open H2 Console</a><br/>" +
                                         "🔗 <b>JDBC URL:</b> <code>jdbc:h2:mem:offersdb</code><br/>" +
                                         "👤 <b>Username:</b> <code>SA</code> | <b>Password:</b> (leave blank)"
