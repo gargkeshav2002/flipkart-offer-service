@@ -133,7 +133,7 @@ to view stored offers.
 
 ## 🧠 Assumptions Made
 
-- The Flipkart API response structure is not fixed, so we recursively scan for promotion messages and special widgets like EMI and Pay Later.
+- The Flipkart API response structure is not fixed, so, recursively scan for promotion messages and special widgets like EMI and Pay Later.
 - Offers are extracted from:
   - `promotionMessage` fields
   - `pricingData.noCostEmi`
@@ -161,7 +161,7 @@ to view stored offers.
 - An **RDBMS schema** (with columns like bank name, discount type, payment instrument, etc.) ensures **data consistency, integrity, and fast lookups** using indexed fields.
 - SQL-based filtering (e.g., `WHERE bankName = 'HDFC' AND paymentInstrument = 'CREDIT'`) allows us to **efficiently query the best offer** based on user input.
 - We follow a normalized schema to avoid redundancy and allow **future scalability** (e.g., separating banks, instruments, offer categories if needed).
-- While a full-fledged RDBMS like **PostgreSQL** would be used in production, we used **H2** because:
+- While a full-fledged RDBMS like **PostgreSQL** would be used in production, I used **H2** because:
     - It behaves similarly (SQL syntax, schema, constraints)
     - Runs **in-memory**, requiring **no setup or installation**
     - Includes a **browser-accessible console** for reviewers to easily inspect stored offers
@@ -171,7 +171,7 @@ to view stored offers.
 
 ### ✅ Why Return 500 for NO_COST_EMI?
 
-- Since these offers don’t define numeric discount, we simulate a fixed saving (₹500) to make them comparable
+- Since these offers don’t define numeric discount, it simulate a fixed saving (₹500) to make them comparable
 - Similarly, ₹300 for cashback if the message doesn’t define an amount
 - These values are logical approximations based on Flipkart’s platform behavior.
 - Can later be replaced with dynamic values from actual EMI plan APIs if available
@@ -209,7 +209,6 @@ To support 1000 RPS:
   - NLP or ML-based fuzzy matching 
   - External mapping file (JSON or YAML)
 - Implement full offer expiry validation (e.g., don't return expired offers)
-- Use PostgreSQL instead of H2 in prod
 - Add rate limiting, logging, and security headers
 - Implement role-based access for admin APIs
 - Add pagination and search in `GET /offers`
