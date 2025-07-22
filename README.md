@@ -110,6 +110,7 @@ Alternatively, you can test the APIs using **Postman**:
 #### 2. `GET /highest-discount`
 **URL:** `http://localhost:8080/highest-discount?amountToPay=10000&bankName=HDFC&paymentInstrument=CREDIT`  
 **Method:** `GET`
+
 ---
 
 ## 🗃️ H2 Database Console
